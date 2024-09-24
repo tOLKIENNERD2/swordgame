@@ -14,7 +14,7 @@ function updateAI(aiPlayer, humanPlayer, powerUp, obstacles) {
         (!aiPlayer.facingRight && obstacle.x < aiPlayer.x && obstacle.x + obstacle.width > aiPlayer.x - 200)
     );
 
-    // Move towards the human player
+    // Move towards the human player hi
     if (!closeToPlayer) {
         if (distanceToPlayer > 0) {
             aiPlayer.moveRight();
