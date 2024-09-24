@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Fighting Game</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+        }
+        #sidebar {
+            width: 200px;
+            background-color: #f0f0f0;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            height: 100vh;
+        }
+        #sidebar h2 {
+            margin-top: 0;
+        }
+        #sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        #sidebar li {
+            margin-bottom: 10px;
+        }
+        #game-container {
+            flex-grow: 1;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden; /* Add this line */
+        }
+        canvas {
+            width: 100%; /* Change this line */
+            height: 100%; /* Change this line */
+            object-fit: contain; /* Add this line */
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h2>Controls</h2>
+        <h3>Warrior</h3>
+        <ul>
+            <li><strong>A</strong> - Move Left</li>
+            <li><strong>D</strong> - Move Right</li>
+            <li><strong>W</strong> - Jump</li>
+            <li><strong>S</strong> - Attack</li>
+            <li><strong>Spacebar</strong> - Block</li>
+        </ul>
+        <h3>Archer</h3>
+        <ul>
+            <li><strong>A</strong> - Move Left</li>
+            <li><strong>D</strong> - Move Right</li>
+            <li><strong>W</strong> - Jump</li>
+            <li><strong>Q</strong> - Aim Up</li>
+            <li><strong>S</strong> - Aim Down</li>
+            <li><strong>Spacebar</strong> - Shoot Arrow</li>
+        </ul>
+        <h3>General</h3>
+        <ul>
+            <li><strong>T</strong> - Toggle Player Type (before game start)</li>
+            <li><strong>Enter</strong> - Start Game</li>
+            <li><strong>R</strong> - Restart (when game over)</li>
+        </ul>
+        <h3>Tips</h3>
+        <ul>
+            <li>Perform combos by attacking quickly</li>
+            <li>Block to reduce incoming damage</li>
+            <li>Collect power-ups for advantages</li>
+        </ul>
+        <h3>Game Options</h3>
+        <button id="toggleType">Toggle Player Type</button>
+        <p id="playerType">Player Type: warrior</p>
+        <button id="newGame">New Game</button>
+    </div>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+    </div>
+    
+    <!-- Load all scripts -->
+    <script src="player.js"></script>
+    <script src="powerUp.js"></script>
+    <script src="obstacle.js"></script>
+    <script src="ai.js"></script>
+    <script src="collisions.js"></script>
+    <script src="levels.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
